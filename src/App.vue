@@ -24,7 +24,7 @@
           <button
             v-if="isUnlocked"
             @click="handleLock"
-            class="hidden sm:flex items-center gap-1.5 text-xs text-amber-400 font-bold px-2.5 py-1.5 rounded-lg hover:bg-white/10 active:scale-95 transition-all cursor-pointer"
+            class="flex items-center gap-1.5 text-xs text-amber-400 font-bold px-2.5 py-1.5 rounded-lg hover:bg-white/10 active:scale-95 transition-all cursor-pointer"
             :title="locale === 'en' ? 'Stop Audio Engine' : '關閉音訊引擎'">
             <div class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse shadow-[0_0_10px_rgba(251,191,36,0.8)]" />
             {{ t('header.engineActive') }}
