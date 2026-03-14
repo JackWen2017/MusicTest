@@ -12,15 +12,19 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  :root, [data-theme="cyber"] {
+  :root,
+  [data-theme="cyber"] {
     --bg-primary: #0d1321;
-    --bg-surface: rgba(13, 19, 33, 0.85); /* Deeper navy glass */
-    --accent-primary: #00b4d8; /* Electric blue */
+    --bg-surface: rgba(13, 19, 33, 0.85);
+    /* Deeper navy glass */
+    --accent-primary: #00b4d8;
+    /* Electric blue */
     --text-main: #ffffff;
     --text-muted: #94a3b8;
-    --border-color: rgba(192, 192, 192, 0.3); /* Polished silver border */
+    --border-color: rgba(192, 192, 192, 0.3);
+    /* Polished silver border */
     --surface-radius: 1rem;
-    --surface-shadow: 0 0 15px rgba(0, 180, 216, 0.2), inset 0 0 20px rgba(0,0,0,0.5);
+    --surface-shadow: 0 0 15px rgba(0, 180, 216, 0.2), inset 0 0 20px rgba(0, 0, 0, 0.5);
     --btn-radius: 0.75rem;
     --btn-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
     --btn-shadow-hover: 0 6px 25px rgba(0, 180, 216, 0.6);
@@ -30,39 +34,44 @@
     --glow-bg-weak: radial-gradient(circle, #06b6d4, #0891b2);
     --gauge-glow: 0 0 10px rgba(0, 180, 216, 0.6);
     --btn-text: #ffffff;
-    --bg-texture: repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 2px);
-    
+    --bg-texture: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.01) 0px, rgba(255, 255, 255, 0.01) 1px, transparent 1px, transparent 2px);
+
     /* Gauge colors */
     --gauge-bezel-1: #3a4a5c;
     --gauge-bezel-2: #1e2a38;
     --gauge-bezel-3: #111822;
     --gauge-face-1: #1e2d40;
     --gauge-face-2: #0d1a28;
-    --gauge-tick: rgba(255,255,255,0.8);
-    --gauge-tick-minor: rgba(255,255,255,0.4);
-    --gauge-text: rgba(255,255,255,0.8);
+    --gauge-tick: rgba(255, 255, 255, 0.8);
+    --gauge-tick-minor: rgba(255, 255, 255, 0.4);
+    --gauge-text: rgba(255, 255, 255, 0.8);
     --gauge-pivot: #1a2533;
 
     /* Specific UI Elements */
     --icon-color: #ffffff;
     --tuner-btn-text: #ffffff;
-    
+
     --needle-core: #00b4d8;
     --needle-glow-filter: drop-shadow(0 0 8px rgba(0, 180, 216, 0.9));
     --needle-base: #1e2a38;
-    
+
     --control-handle: linear-gradient(135deg, #e2e8f0, #94a3b8);
-    --control-handle-shadow: 0 2px 5px rgba(0,0,0,0.6), inset 0 1px 1px rgba(255,255,255,0.8);
+    --control-handle-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.8);
 
     --beat-radius: 50%;
-    --beat-active-bg: radial-gradient(circle at 35% 35%, #ffd700, #b8860b 60%, #8b6508);
-    --beat-active-shadow: 0 4px 15px rgba(218, 165, 32, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.6);
-    --beat-inactive-bg: radial-gradient(circle at 35% 35%, #e5e7eb, #9ca3af 60%, #4b5563);
-    --beat-inactive-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+    /* 1. Cyber Metal: High-reflective heavy 3D industrial spheres */
+    --beat-active-bg: radial-gradient(circle at 30% 30%, #fff7cc 0%, #ffd700 20%, #b8860b 60%, #5c4300 100%);
+    /* Polished glowing brass */
+    --beat-active-shadow: 0 5px 15px rgba(218, 165, 32, 0.6), inset -5px -5px 15px rgba(0, 0, 0, 0.8), inset 5px 5px 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 215, 0, 0.8);
+    --beat-inactive-bg: radial-gradient(circle at 30% 30%, #e0e0e0 0%, #a0a0a0 40%, #4a5568 80%, #1a202c 100%);
+    /* Cold brushed steel with environment reflect */
+    --beat-inactive-shadow: 0 5px 10px rgba(0, 0, 0, 0.6), inset -5px -5px 15px rgba(13, 19, 33, 0.9), inset 5px 5px 15px rgba(255, 255, 255, 0.7);
 
-    --metro-start-bg: #111822; /* Dark metal */
+    --metro-start-bg: #111822;
+    /* Dark metal */
     --metro-start-text: #ffffff;
-    --metro-start-border: #4ade80; /* Neon green */
+    --metro-start-border: #4ade80;
+    /* Neon green */
     --metro-start-shadow: 0 0 15px rgba(74, 222, 128, 0.4), inset 0 0 10px rgba(74, 222, 128, 0.1);
     --metro-stop-bg: #111822;
     --metro-stop-text: #ef4444;
@@ -71,14 +80,19 @@
   }
 
   [data-theme="sweet"] {
-    --bg-primary: #FFF5F8; /* Sakura Pink */
-    --bg-surface: #FFFFFF; /* Pure white cards */
-    --accent-primary: #FF85A2; /* Rose pink */
+    --bg-primary: #FFF5F8;
+    /* Sakura Pink */
+    --bg-surface: #FFFFFF;
+    /* Pure white cards */
+    --accent-primary: #FF85A2;
+    /* Rose pink */
     --text-main: #4A4063;
     --text-muted: #8b7d9e;
     --border-color: rgba(255, 133, 162, 0.15);
-    --surface-radius: 1.875rem; /* rounded-3xl */
-    --surface-shadow: 0 10px 40px rgba(255, 133, 162, 0.1); /* Soft pink shadow */
+    --surface-radius: 1.875rem;
+    /* rounded-3xl */
+    --surface-shadow: 0 10px 40px rgba(255, 133, 162, 0.1);
+    /* Soft pink shadow */
     --btn-radius: 1.5rem;
     --btn-shadow: 0 4px 15px rgba(255, 133, 162, 0.3);
     --btn-shadow-hover: 0 6px 20px rgba(255, 133, 162, 0.4);
@@ -87,9 +101,9 @@
     --glow-bg-strong: linear-gradient(135deg, #ffb6c1, #ff85a2);
     --glow-bg-weak: linear-gradient(135deg, #ffc0cb, #ffb6c1);
     --gauge-glow: 0 0 10px rgba(255, 133, 162, 0.3);
-    --btn-text: #ffffff;
-    --bg-texture: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4) 0%, transparent 40%);
-    
+    --btn-text: #000000;
+    --bg-texture: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.4) 0%, transparent 40%);
+
     /* Gauge colors */
     --gauge-bezel-1: #FFB1C5;
     --gauge-bezel-2: #FFD1DC;
@@ -104,21 +118,28 @@
     /* Specific UI Elements */
     --icon-color: #000000;
     --tuner-btn-text: #000000;
-    
-    --needle-core: #db2777; /* Deep rose pink */
+
+    --needle-core: #db2777;
+    /* Deep rose pink */
     --needle-glow-filter: drop-shadow(0 2px 3px rgba(219, 39, 119, 0.3));
     --needle-base: #fbcfe8;
-    
-    --control-handle: #fda4af; /* Matte rose gold */
+
+    --control-handle: #fda4af;
+    /* Matte rose gold */
     --control-handle-shadow: 0 2px 6px rgba(253, 164, 175, 0.5);
 
-    --beat-radius: 9999px; /* Rounded tags */
-    --beat-active-bg: linear-gradient(135deg, #fb7185, #f43f5e); /* Glossy strawberry */
-    --beat-active-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
-    --beat-inactive-bg: #ffffff;
-    --beat-inactive-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    --beat-radius: 50%;
+    /* Revert back to 50% for Macaron shape */
+    /* 2. Sweet Pink: 3D French Macaron style */
+    --beat-active-bg: radial-gradient(circle at 35% 25%, #ffb3c6 0%, #fb7185 45%, #e11d48 100%);
+    /* Strawberry frosting with gloss */
+    --beat-active-shadow: 0 8px 15px rgba(244, 63, 94, 0.4), inset -3px -5px 8px rgba(159, 18, 57, 0.5), inset 3px 5px 10px rgba(255, 255, 255, 0.8);
+    --beat-inactive-bg: radial-gradient(circle at 35% 25%, #ffe4e6 0%, #fecdd3 45%, #fda4af 100%);
+    /* Rose milk tea with soft shadows */
+    --beat-inactive-shadow: 0 5px 10px rgba(253, 164, 175, 0.3), inset -3px -5px 8px rgba(251, 113, 133, 0.4), inset 3px 5px 10px rgba(255, 255, 255, 0.9);
 
-    --metro-start-bg: #ffe4e6; /* Soft pale pink */
+    --metro-start-bg: #ffe4e6;
+    /* Soft pale pink */
     --metro-start-text: #000000;
     --metro-start-border: #fda4af;
     --metro-start-shadow: 0 4px 12px rgba(244, 63, 94, 0.15);
@@ -129,17 +150,19 @@
   }
 
   [data-theme="angel"] {
-    --bg-primary: #FDFCF0; /* Rice/Warm White */
+    --bg-primary: #FDFCF0;
+    /* Rice/Warm White */
     --bg-surface: #FFFFFF;
-    --accent-primary: #FFC300; /* Sunny Gold */
+    --accent-primary: #FFC300;
+    /* Sunny Gold */
     --text-main: #1F2937;
     --text-muted: #6B7280;
     --border-color: rgba(229, 231, 235, 0.5);
     --surface-radius: 1rem;
     --surface-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.03);
     --btn-radius: 0.5rem;
-    --btn-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    --btn-shadow-hover: 0 4px 10px rgba(0,0,0,0.1);
+    --btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --btn-shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.1);
     --glow-strong: 0 0 10px rgba(255, 195, 0, 0.6);
     --glow-weak: 0 0 8px rgba(255, 195, 0, 0.3);
     --glow-bg-strong: #FFC300;
@@ -162,23 +185,30 @@
     /* Specific UI Elements */
     --icon-color: #000000;
     --tuner-btn-text: #000000;
-    
-    --needle-core: #ffc300; /* Sunny gold */
+
+    --needle-core: #ffc300;
+    /* Sunny gold */
     --needle-glow-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
     --needle-base: #f3f4f6;
-    
-    --control-handle: #38bdf8; /* Clean sky blue */
+
+    --control-handle: #38bdf8;
+    /* Clean sky blue */
     --control-handle-shadow: 0 2px 4px rgba(56, 189, 248, 0.3);
 
     --beat-radius: 50%;
-    --beat-active-bg: #ffc300; /* Flat sunny gold */
-    --beat-active-shadow: none;
-    --beat-inactive-bg: #f3f4f6; /* Very pale light grey */
-    --beat-inactive-shadow: none;
+    /* 3. Angel White: Glowing crystal & pearlescent orbs */
+    --beat-active-bg: radial-gradient(circle at 30% 30%, #ffffff 0%, #ffdf80 30%, #ffc300 70%, #d4af37 100%);
+    /* Morning sun crystal */
+    --beat-active-shadow: 0 5px 20px rgba(255, 195, 0, 0.4), inset -4px -4px 12px rgba(212, 175, 55, 0.5), inset 4px 4px 15px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 235, 150, 0.6);
+    --beat-inactive-bg: radial-gradient(circle at 30% 30%, #ffffff 0%, #fefce8 30%, #f3f4f6 70%, #d1d5db 100%);
+    /* Pearlescent white */
+    --beat-inactive-shadow: 0 6px 15px rgba(0, 0, 0, 0.06), inset -4px -4px 10px rgba(156, 163, 175, 0.2), inset 4px 4px 12px rgba(255, 255, 255, 0.9);
 
     --metro-start-bg: #ffffff;
-    --metro-start-text: #374151; /* Dark charcoal */
-    --metro-start-border: #bae6fd; /* Faint light blue */
+    --metro-start-text: #374151;
+    /* Dark charcoal */
+    --metro-start-border: #bae6fd;
+    /* Faint light blue */
     --metro-start-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     --metro-stop-bg: #fef2f2;
     --metro-stop-text: #b91c1c;
@@ -285,9 +315,11 @@
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border-color);
   border-radius: 3px;
