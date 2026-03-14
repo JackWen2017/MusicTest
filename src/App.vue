@@ -20,15 +20,17 @@
         <!-- Right side controls -->
         <div class="flex items-center gap-2 sm:gap-3">
 
-          <!-- Audio Engine Active status -->
+          <!-- Audio Engine Active status (Stop button) -->
           <button
             v-if="isUnlocked"
             @click="handleLock"
-            class="flex items-center gap-1.5 text-xs text-amber-400 font-bold px-2.5 py-1.5 rounded-lg hover:bg-white/10 active:scale-95 transition-all cursor-pointer"
+            class="btn-primary bg-red-500 border-red-500 hover:bg-red-600 hover:border-red-600 text-white text-xs sm:text-sm px-3 sm:px-5 py-2 sm:py-2.5 flex items-center gap-2 shadow-[0_0_15px_rgba(239,68,68,0.4)]"
             :title="locale === 'en' ? 'Stop Audio Engine' : '關閉音訊引擎'">
-            <div class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse shadow-[0_0_10px_rgba(251,191,36,0.8)]" />
-            {{ t('header.engineActive') }}
-            <svg class="w-3 h-3 opacity-60 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z"/>
+            </svg>
+            <span class="hidden xs:inline">{{ locale === 'en' ? 'Stop' : '停止引擎' }}</span>
+            <span class="xs:hidden">■</span>
           </button>
 
           <!-- Start Audio Engine button -->
