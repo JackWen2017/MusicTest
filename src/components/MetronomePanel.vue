@@ -3,9 +3,9 @@
     <!-- Header -->
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-theme-accent text-white shadow-sm"
-             style="box-shadow: 0 0 12px var(--accent-primary)">
-          <svg class="w-4 h-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-300 pointer-events-none"
+             style="color: var(--icon-color)">
+          <svg class="w-6 h-6 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
@@ -147,10 +147,13 @@
             :disabled="!audioUnlocked"
             class="w-full py-5 text-lg font-black uppercase tracking-widest rounded-2xl transition-all duration-200 active:scale-95
                    disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3
-                   border-2 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
-            :class="isPlaying 
-              ? 'bg-red-500 border-red-500 shadow-[0_0_30px_rgba(239,68,68,0.7)] hover:brightness-110' 
-              : 'bg-green-500 border-green-500 shadow-[0_0_30px_rgba(34,197,94,0.7)] hover:brightness-110'">
+                   border-2"
+            :style="{ 
+              background: isPlaying ? 'var(--metro-stop-bg)' : 'var(--metro-start-bg)',
+              color: isPlaying ? 'var(--metro-stop-text)' : 'var(--metro-start-text)',
+              borderColor: isPlaying ? 'var(--metro-stop-border)' : 'var(--metro-start-border)',
+              boxShadow: isPlaying ? 'var(--metro-stop-shadow)' : 'var(--metro-start-shadow)'
+            }">
       <!-- Pause icon -->
       <div v-if="isPlaying" class="w-5 h-5 grid grid-cols-2 gap-1 flex-shrink-0 drop-shadow-sm">
         <div class="bg-current rounded-sm" />
@@ -305,13 +308,12 @@ const tempoName = computed(() => {
   transition: border-color 0.4s;
 }
 
-/* Polished metal slider knobs */
+/* Polished metal or flat slider knobs */
 .metal-knob {
   border-radius: 50%;
   color: var(--text-main);
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, rgba(0,0,0,0.1) 80%);
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: inset 0 1px 2px rgba(255,255,255,0.3), 0 3px 6px rgba(0,0,0,0.4);
+  background: var(--control-handle);
+  box-shadow: var(--control-handle-shadow);
   transition: all 0.15s, transform 0.1s;
 }
 .metal-knob:hover { filter: brightness(1.15); }
@@ -320,38 +322,31 @@ const tempoName = computed(() => {
 /* BPM Text Glow */
 .bpm-display, .bpm-input {
   color: var(--accent-primary);
-  text-shadow: 0 0 15px var(--accent-primary), 0 0 35px var(--accent-primary);
+  text-shadow: var(--glow-strong);
 }
-.bpm-display:hover { text-shadow: 0 0 25px var(--accent-primary), 0 0 50px var(--accent-primary); }
 
-/* 3D Sphere Beats */
+/* 3D Sphere Beats or Flat circles */
 .sphere-beat {
-  border-radius: 50%;
+  border-radius: var(--beat-radius);
   transition: all 0.08s cubic-bezier(0.25, 1, 0.5, 1);
-  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.4), inset 5px 5px 10px rgba(255,255,255,0.3), 0 5px 10px rgba(0,0,0,0.3);
+  box-shadow: var(--beat-inactive-shadow);
 }
 
 .sphere-strong {
   width: 44px; height: 44px;
-  background: radial-gradient(circle at 35% 35%, #ffd700 0%, #b8860b 60%, #5c4300 100%);
-  opacity: 0.6;
+  background: var(--beat-inactive-bg);
+  opacity: 0.8;
 }
 .sphere-weak {
   width: 36px; height: 36px;
-  background: radial-gradient(circle at 35% 35%, #e0e0e0 0%, #a0a0a0 60%, #404040 100%);
-  opacity: 0.5;
+  background: var(--beat-inactive-bg);
+  opacity: 0.6;
 }
 
-.sphere-active-strong {
+.sphere-active-strong, .sphere-active-weak {
   opacity: 1;
-  background: radial-gradient(circle at 35% 35%, #fff2a8 0%, #ffd700 40%, #d4af37 100%);
-  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.2), inset 5px 5px 10px rgba(255,255,255,0.6), 0 0 25px rgba(255,215,0,0.8), 0 0 50px rgba(255,215,0,0.4);
+  background: var(--beat-active-bg);
+  box-shadow: var(--beat-active-shadow);
   transform: scale(1.15);
-}
-.sphere-active-weak {
-  opacity: 1;
-  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #e0e0e0 40%, #b0b0b0 100%);
-  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.2), inset 5px 5px 10px rgba(255,255,255,0.6), 0 0 20px rgba(224,224,224,0.7), 0 0 40px rgba(224,224,224,0.3);
-  transform: scale(1.12);
 }
 </style>

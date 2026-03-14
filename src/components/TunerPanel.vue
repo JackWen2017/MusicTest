@@ -3,9 +3,9 @@
     <!-- ── Header ── -->
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg flex items-center justify-center bg-theme-accent text-white shadow-sm"
-             style="box-shadow: 0 0 12px var(--accent-primary)">
-          <svg class="w-4 h-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-300 pointer-events-none"
+             style="color: var(--icon-color)">
+          <svg class="w-6 h-6 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
           </svg>
@@ -93,10 +93,10 @@
                    disabled:opacity-40 disabled:cursor-not-allowed border"
             :class="isListening
               ? 'btn-danger shadow-[0_0_20px_rgba(239,68,68,0.5)] border-red-500/40'
-              : 'bg-theme-accent border-theme-accent text-white shadow-[0_0_18px_var(--accent-primary)] hover:brightness-110'">
-      <span class="drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] leading-none" v-if="!audioUnlocked">{{ t('tuner.locked') }}</span>
-      <span class="drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] leading-none" v-else-if="isListening">⏹ {{ t('tuner.stopTuner') }}</span>
-      <span class="drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] leading-none flex items-center justify-center gap-1.5" v-else>
+              : 'bg-theme-accent border-theme-accent shadow-[0_0_18px_var(--accent-primary)] hover:brightness-110'">
+      <span class="leading-none" :style="{ color: 'var(--tuner-btn-text)' }" v-if="!audioUnlocked">{{ t('tuner.locked') }}</span>
+      <span class="leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]" v-else-if="isListening">{{ t('tuner.stopTuner') }}</span>
+      <span class="leading-none flex items-center justify-center gap-1.5" :style="{ color: 'var(--tuner-btn-text)' }" v-else>
         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <span>{{ t('tuner.startTuner') }}</span>
       </span>

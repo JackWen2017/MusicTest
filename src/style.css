@@ -42,6 +42,32 @@
     --gauge-tick-minor: rgba(255,255,255,0.4);
     --gauge-text: rgba(255,255,255,0.8);
     --gauge-pivot: #1a2533;
+
+    /* Specific UI Elements */
+    --icon-color: #ffffff;
+    --tuner-btn-text: #ffffff;
+    
+    --needle-core: #00b4d8;
+    --needle-glow-filter: drop-shadow(0 0 8px rgba(0, 180, 216, 0.9));
+    --needle-base: #1e2a38;
+    
+    --control-handle: linear-gradient(135deg, #e2e8f0, #94a3b8);
+    --control-handle-shadow: 0 2px 5px rgba(0,0,0,0.6), inset 0 1px 1px rgba(255,255,255,0.8);
+
+    --beat-radius: 50%;
+    --beat-active-bg: radial-gradient(circle at 35% 35%, #ffd700, #b8860b 60%, #8b6508);
+    --beat-active-shadow: 0 4px 15px rgba(218, 165, 32, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+    --beat-inactive-bg: radial-gradient(circle at 35% 35%, #e5e7eb, #9ca3af 60%, #4b5563);
+    --beat-inactive-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+
+    --metro-start-bg: #111822; /* Dark metal */
+    --metro-start-text: #ffffff;
+    --metro-start-border: #4ade80; /* Neon green */
+    --metro-start-shadow: 0 0 15px rgba(74, 222, 128, 0.4), inset 0 0 10px rgba(74, 222, 128, 0.1);
+    --metro-stop-bg: #111822;
+    --metro-stop-text: #ef4444;
+    --metro-stop-border: #ef4444;
+    --metro-stop-shadow: 0 0 15px rgba(239, 68, 68, 0.4), inset 0 0 10px rgba(239, 68, 68, 0.1);
   }
 
   [data-theme="sweet"] {
@@ -74,6 +100,32 @@
     --gauge-tick-minor: rgba(255, 133, 162, 0.4);
     --gauge-text: #FF85A2;
     --gauge-pivot: #FFD1DC;
+
+    /* Specific UI Elements */
+    --icon-color: #000000;
+    --tuner-btn-text: #000000;
+    
+    --needle-core: #db2777; /* Deep rose pink */
+    --needle-glow-filter: drop-shadow(0 2px 3px rgba(219, 39, 119, 0.3));
+    --needle-base: #fbcfe8;
+    
+    --control-handle: #fda4af; /* Matte rose gold */
+    --control-handle-shadow: 0 2px 6px rgba(253, 164, 175, 0.5);
+
+    --beat-radius: 9999px; /* Rounded tags */
+    --beat-active-bg: linear-gradient(135deg, #fb7185, #f43f5e); /* Glossy strawberry */
+    --beat-active-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
+    --beat-inactive-bg: #ffffff;
+    --beat-inactive-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+    --metro-start-bg: #ffe4e6; /* Soft pale pink */
+    --metro-start-text: #000000;
+    --metro-start-border: #fda4af;
+    --metro-start-shadow: 0 4px 12px rgba(244, 63, 94, 0.15);
+    --metro-stop-bg: #fecdd3;
+    --metro-stop-text: #9f1239;
+    --metro-stop-border: #fb7185;
+    --metro-stop-shadow: 0 4px 12px rgba(225, 29, 72, 0.15);
   }
 
   [data-theme="angel"] {
@@ -106,6 +158,32 @@
     --gauge-tick-minor: rgba(31, 41, 55, 0.3);
     --gauge-text: #1F2937;
     --gauge-pivot: #F3F4F6;
+
+    /* Specific UI Elements */
+    --icon-color: #000000;
+    --tuner-btn-text: #000000;
+    
+    --needle-core: #ffc300; /* Sunny gold */
+    --needle-glow-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+    --needle-base: #f3f4f6;
+    
+    --control-handle: #38bdf8; /* Clean sky blue */
+    --control-handle-shadow: 0 2px 4px rgba(56, 189, 248, 0.3);
+
+    --beat-radius: 50%;
+    --beat-active-bg: #ffc300; /* Flat sunny gold */
+    --beat-active-shadow: none;
+    --beat-inactive-bg: #f3f4f6; /* Very pale light grey */
+    --beat-inactive-shadow: none;
+
+    --metro-start-bg: #ffffff;
+    --metro-start-text: #374151; /* Dark charcoal */
+    --metro-start-border: #bae6fd; /* Faint light blue */
+    --metro-start-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --metro-stop-bg: #fef2f2;
+    --metro-stop-text: #b91c1c;
+    --metro-stop-border: #fca5a5;
+    --metro-stop-shadow: 0 2px 8px rgba(239, 68, 68, 0.05);
   }
 
   body {
@@ -182,20 +260,19 @@
 
   .beat-light {
     transition: all 0.075s ease-out;
-    border: 1px solid var(--border-color);
-    border-radius: var(--btn-radius);
+    border-radius: var(--beat-radius);
+    background: var(--beat-inactive-bg);
+    box-shadow: var(--beat-inactive-shadow);
   }
 
   .beat-light.active-strong {
-    background: var(--glow-bg-strong);
-    box-shadow: var(--glow-strong);
-    border-color: transparent;
+    background: var(--beat-active-bg);
+    box-shadow: var(--beat-active-shadow);
   }
 
   .beat-light.active-weak {
-    background: var(--glow-bg-weak);
-    box-shadow: var(--glow-weak);
-    border-color: transparent;
+    background: var(--beat-active-bg);
+    box-shadow: var(--beat-active-shadow);
   }
 
   .section-header {

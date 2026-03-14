@@ -72,38 +72,28 @@
 
       <!-- ── 0¢ marker dot at top ── -->
       <circle :cx="CX" :cy="CY - R_SCALE" r="2.5"
-              :fill="isInTune ? '#4ade80' : 'var(--accent-primary)'"
-              :filter="isInTune ? 'url(#green-glow)' : 'url(#needle-glow)'" />
+              fill="var(--needle-core)"
+              style="filter: var(--needle-glow-filter)" />
 
       <!-- ── Needle ── -->
       <g :style="needleStyle">
-        <!-- Glow layer -->
-        <line :x1="CX" :y1="CY + 8" :x2="CX" :y2="CY - R_SCALE + 10"
-              :stroke="isInTune ? '#4ade80' : 'var(--accent-primary)'"
-              stroke-width="4" stroke-linecap="round"
-              opacity="0.25" filter="url(#needle-glow)" />
-        <!-- Core needle -->
-        <line :x1="CX" :y1="CY + 8" :x2="CX" :y2="CY - R_SCALE + 10"
-              stroke="url(#needle-grad)"
-              stroke-width="2" stroke-linecap="round"
-              :filter="isInTune ? 'url(#green-glow)' : 'url(#needle-glow)'" />
-        <!-- Needle tip dot -->
-        <circle :cx="CX" :cy="CY - R_SCALE + 10" r="2"
-                :fill="isInTune ? '#4ade80' : 'var(--accent-primary)'" />
+        <!-- Sharp Physical Needle Body -->
+        <polygon :points="`${CX-4},${CY+10} ${CX+4},${CY+10} ${CX},${CY - R_SCALE + 8}`"
+                 fill="var(--needle-core)"
+                 style="filter: var(--needle-glow-filter); transition: fill 0.3s;" />
+        <!-- Center line for 3D metallic feel -->
+        <line :x1="CX" :y1="CY + 10" :x2="CX" :y2="CY - R_SCALE + 8" stroke="#ffffff" stroke-width="0.5" opacity="0.5"/>
       </g>
 
       <!-- ── Pivot cap ── -->
-      <!-- Outer ring -->
-      <circle :cx="CX" :cy="CY" r="9" fill="var(--gauge-pivot)" stroke="currentColor" opacity="0.3" stroke-width="1" />
-      <!-- Inner metal button -->
-      <circle :cx="CX" :cy="CY" r="5.5"
-              fill="none"
-              stroke="var(--accent-primary)"
-              stroke-width="1.5"
-              :opacity="isInTune ? 1 : 0.7"/>
+      <!-- Outer Base -->
+      <circle :cx="CX" :cy="CY" r="10" fill="var(--needle-base)" stroke="rgba(0,0,0,0.3)" stroke-width="1" />
+      <!-- Inner Ring -->
+      <circle :cx="CX" :cy="CY" r="7" fill="transparent" stroke="var(--needle-core)" stroke-width="1.5" style="filter: var(--needle-glow-filter)" />
+      <circle :cx="CX" :cy="CY" r="4" fill="var(--needle-base)" />
       <circle :cx="CX" :cy="CY" r="3"
-              :fill="isInTune ? '#4ade80' : 'var(--accent-primary)'"
-              :filter="isInTune ? 'url(#green-glow)' : 'url(#needle-glow)'" />
+              fill="var(--needle-core)"
+              style="filter: var(--needle-glow-filter)" />
 
       <!-- ── Labels corner ── -->
       <text :x="CX - R_BEZEL_I + 4" :y="CY + 2"
